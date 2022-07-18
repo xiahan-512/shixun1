@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+   <input type="text" name="city" id="" value="北京市"></br>
+   <input type="text" name="city" id="" value="朝阳区"></br>
+   <button id="btn">传参</button>
+</body>
+<script>
+// function表明这是一个函数
+// foo是函数名
+// x是传入的变量
+// {}是我们实现函数功能的部分，可以加上return,也可以不加上return,如果加上return的话函数调用结束返回return的结果，否则就返回undefined
+
+// 当然也可以这样定义,把函数赋值给一个变量
+
+// 由于JavaScript允许传入任意个参数而不影响调用，因此传入的参数比定义的参数多也没有问题，虽然函数内部并不需要这些参数
+// 传入的参数比定义的少也没有问题
+
+    function foo(x){
+                alert (x);
+            }
+
+
+    // 点击传参先弹出北京市 再弹出朝阳区
+    let btn = document.getElementById('btn')
+    let city = document.getElementsByName('city')
+    btn.onclick = function(){
+        // alert('北京市')
+        for(var i=0;i<city.length;i++){
+            foo(city[i].value)
+        }
+    }
+</script>
+</html>
